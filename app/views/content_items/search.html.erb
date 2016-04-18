@@ -1,0 +1,36 @@
+
+
+ <form method="post" action="search">
+        <input type="text" name="q" size="31" value= "<%= params[:q] %>" >
+        <input type="submit" value="Submit">
+ </form>
+
+
+
+<% if params[:q] %>
+
+
+<div class="colomn video-container">
+	
+
+<% @videos.first(30).each do |video| %>
+      
+        
+         	<% if video %>
+				<div class="col-md-3 thumbnail-item">
+					<%= link_to image_tag("#{video.thumbnail_url}", :border => 0), {:action => 'show', :content_item_id => video.id} %>
+					<%= link_to 'click me', action: 'show' , content_item_id: video.id %>
+				</div>
+         	<% end %>
+      
+
+	   
+<% end %>
+  
+</div>
+
+	
+<% end %>
+
+ 
+
