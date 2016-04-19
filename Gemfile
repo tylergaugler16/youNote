@@ -6,6 +6,7 @@ gem 'rails', '4.2.1'
 gem 'bcrypt',               '3.1.7'
 gem 'yt',                   '0.25.6'
 
+
 gem 'autoprefixer-rails'
 
 gem 'bootstrap-sass',       '3.2.0.0'
