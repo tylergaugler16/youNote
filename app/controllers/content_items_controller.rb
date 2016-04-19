@@ -5,12 +5,15 @@ class ContentItemsController < ApplicationController
 
 
   def search
-   @videos= Array.new
-    videos = Yt::Collections::Videos.new
-    videos.where(q: params[:q], order: 'viewCount')
-    videos.each do |video|
-    @videos.push(video)
-  	
+      page = params[:page] || 1
+      @videos= []
+      videos = Yt::Collections::Videos.new
+      videos.where(q: params[:q], order: 'viewCount')
+      videos.each do |v|
+        @videos<<v
+      end
+     @videos = @videos[(page-1)*9, page*9]
+   
   end
 
 

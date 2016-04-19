@@ -1,32 +1,43 @@
 
+<div class=" container search-partial">
 
- <form method="post" action="search">
+	 <form method="post" action="search">
         <input type="text" name="q" size="31" value= "<%= params[:q] %>" >
         <input type="submit" value="Submit">
- </form>
+ 	</form>
+
+	
+
+</div>
+
+
 
 
 
 <% if params[:q] %>
  	
- 	<div class="colomn video-container">
+ 	<div class="video-container">
+
+
+	<%	@videos.in_groups_of(3).each do |group| %>
+			<div class="row">
+				<% group.each do |video| %>
+					<% if video %>
+					<div class="col-md-4 thumbnail-item">
+							<%= link_to image_tag("#{video.thumbnail_url}", :border => 0), {:action => 'show', :content_item_id => video.id} %>
+							<%= link_to 'click me', action: 'show' , content_item_id: video.id %>
+						</div>
+					<% end %>
+					<% end %>
+
+			</div>
+		
+		<% end %>
 	
 
-<% @videos.first(30).each_with_index do |video, index| %>
-      
-        <% column
-         	<% if video %>
-				<div class="col-md-4 thumbnail-item">
-					<%= link_to image_tag("#{video.thumbnail_url}", :border => 0), {:action => 'show', :content_item_id => video.id} %>
-					<%= link_to 'click me', action: 'show' , content_item_id: video.id %>
-				</div>
-         	<% end %>
-      
-
-	   
-<% end %>
+			
   
-</div>
+	</div>
 
 
 
