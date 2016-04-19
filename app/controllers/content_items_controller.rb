@@ -5,13 +5,14 @@ class ContentItemsController < ApplicationController
 
 
   def search
-  	
-    page_number= 1 || params[:page]
-  	@videos = Yt::Collections::Videos.new
-  	@videos.where(q: params[:q], order: 'viewCount')
-
+   @videos= Array.new
+    videos = Yt::Collections::Videos.new
+    videos.where(q: params[:q], order: 'viewCount')
+    videos.each do |video|
+    @videos.push(video)
   	
   end
+
 
   def show
   		@video = Yt::Video.new id: params[:content_item_id]

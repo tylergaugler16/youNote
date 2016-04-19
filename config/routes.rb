@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'static_pages#home'
+
   get 'content_items/search'
   post 'content_items/search'
   get 'content_items/show'
@@ -6,9 +9,10 @@ Rails.application.routes.draw do
 
   
 
-  get 'help'  => 'static_pages/help'
-  root 'static_pages#home'
+  get 'help'  => 'static_pages#help'
 
+  resources :users
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

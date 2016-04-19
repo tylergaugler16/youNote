@@ -8,16 +8,15 @@
 
 
 <% if params[:q] %>
-
-
-<div class="colomn video-container">
+ 	
+ 	<div class="colomn video-container">
 	
 
-<% @videos.first(30).each do |video| %>
+<% @videos.first(30).each_with_index do |video, index| %>
       
-        
+        <% column
          	<% if video %>
-				<div class="col-md-3 thumbnail-item">
+				<div class="col-md-4 thumbnail-item">
 					<%= link_to image_tag("#{video.thumbnail_url}", :border => 0), {:action => 'show', :content_item_id => video.id} %>
 					<%= link_to 'click me', action: 'show' , content_item_id: video.id %>
 				</div>
@@ -28,6 +27,8 @@
 <% end %>
   
 </div>
+
+
 
 	
 <% end %>

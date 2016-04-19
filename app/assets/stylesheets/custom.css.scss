@@ -10,8 +10,9 @@ $gray-medium-light: #eaeaea;
 
 /* universal */
 
-body {
-  padding-top: 60px;
+div.container{
+  padding-left:0;
+  padding-right:0;
 }
 
 section {
@@ -64,9 +65,9 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.9em;
   color: white;
-  text-transform: uppercase;
+  
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
@@ -163,6 +164,12 @@ input {
 
 
 
+
+
+
+
+
+
 /* miscellaneous */
 
 .debug_dump {
@@ -172,6 +179,8 @@ input {
   margin-top: 45px;
   @include box_sizing;
 }
+
+@import "static_pages";
 
 
 

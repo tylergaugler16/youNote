@@ -15,7 +15,7 @@
     <div class="container">
 
       <!-- this is to display appropraite messages from the hash called flash.
-        the loop adds the correct class to the div and displays te correct message
+        the loop adds the correct class to the div and displays the correct message
         (look at user/create method for example)-->
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
@@ -25,6 +25,7 @@
       <%= render '/layouts/footer' %>
       <%= debug(params) if Rails.env.development? %>
     </div>    
+    
   </body>
 
 </body>
