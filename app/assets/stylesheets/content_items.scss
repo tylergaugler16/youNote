@@ -1,12 +1,60 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$custom-blue: #2bb0ff;
 
-.thumbnail-item{
-	display:inline-block;
 
+
+
+
+
+// show page 
+.show-container{
+	h1{
+		margin-top: 50px;
+	}
+	.show-video-container{
+		margin-top: 50px;
+		margin-left: 30%;
+	}
+	.description{
+		margin-top: 10px;
+		padding:20px;
+		background-color: #f5f5f5;
+    	border: 1px solid #ccc;
+    	font-size: 1.2em;
+	}
+	button{
+		margin-top: 10px;
+		background-color: $custom-blue;
+		color:white;
+		&:hover{
+			background-color:rgba(43,176,255,0.9);
+			color:white;
+		}
+	}
 }
+
+
+
+// search page
 
 .search-partial{
 	margin-top:100px;
+}
+
+
+.search-video-container{
+	.row{
+		margin-top: 50px;
+	}
+	.thumbnail-item{
+		display:inline-block;
+
+	}
+	a{
+		color: $custom-blue;
+	}
+
+
 }
