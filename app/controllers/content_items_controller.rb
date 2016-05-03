@@ -1,3 +1,5 @@
+
+
 class ContentItemsController < ApplicationController
 	protect_from_forgery unless: -> { request.format.json? }
 	#for: Can't verify CSRF token authenticity
@@ -12,6 +14,10 @@ class ContentItemsController < ApplicationController
       videos.each do |v|
         @videos<<v
       end
+      
+      @page = WillPaginate::Collection.create(params[:page], 30, 300) do |pager|
+               pager.replace @videos[pager.offset, 30]
+            end
      
    
   end

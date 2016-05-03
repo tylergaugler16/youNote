@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 gem 'bcrypt',               '3.1.7'
 gem 'yt',                   '0.25.6'
+gem 'will_paginate',        '3.0.6'
 
 
 gem 'autoprefixer-rails'

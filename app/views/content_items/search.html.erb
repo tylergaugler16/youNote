@@ -6,46 +6,30 @@
         <input type="text" name="q" size="31" value= "<%= params[:q] %>" >
         <input type="submit" value="Submit" class="search-bar">
  	</form>
-
-	
-
 </div>
 
 
-
-
-
 <% if params[:q] %>
-<% params[:start] = (params[:page]-1)*30 %>
-<% params[:end] = (params[:page])*30 %>
- 	
+
  	<div class="search-video-container">
 
 
-	<%	@videos[ params[:start],params[:end] ].in_groups_of(3).each do |group| %>
+	<%	@page.in_groups_of(3).each do |group| %>
 			<div class="row">
 				<% group.each do |video| %>
 						<% if video %>
 							<div class="col-md-4 thumbnail-item">
 							    <%= link_to image_tag("#{video.thumbnail_url}", :size => "180x135"), {:action => 'show', :content_item_id => video.id} %>
-								<%= link_to 'select', action: 'show' , content_item_id: video.id %>
 							</div>
 						<% end %>
 					<% end %>
-
-			</div>
-		
+			</div>	
 		<% end %>
-	
-
-			
-  
 	</div>
-
-
-
-	
+		<%= will_paginate @page, :params => { :q => params[:q] } %>
 <% end %>
+
+
 
 
 

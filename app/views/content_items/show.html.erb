@@ -2,7 +2,7 @@
 <div class="container show-container">
 	<h1><%= @video.title %></h1>
 	<div class="show-video-container container-fluid">
-		<%= @video.embed_html.html_safe %>
+		<iframe width="640" height="360" src="https://www.youtube.com/embed/<%= @video.id %>" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<div class="description container-fluid">
 		<%= @video.description %>
