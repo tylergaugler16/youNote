@@ -14,8 +14,12 @@ $custom-blue: #2bb0ff;
 		margin-top: 50px;
 	}
 	.show-video-container{
+		iframe{
+			width:640;
+			height:360;
+		}	
 		margin-top: 50px;
-		margin-left: 30%;
+		margin-left: 21%;
 	}
 	.description{
 		margin-top: 10px;
@@ -45,10 +49,12 @@ $custom-blue: #2bb0ff;
 
 
 .search-video-container{
+
 	.row{
 		margin-top: 50px;
 	}
 	.thumbnail-item{
+		
 		display:inline-block;
 
 	}

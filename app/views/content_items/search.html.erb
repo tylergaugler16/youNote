@@ -25,12 +25,12 @@
 	<%	@videos[ params[:start],params[:end] ].in_groups_of(3).each do |group| %>
 			<div class="row">
 				<% group.each do |video| %>
-					<% if video %>
-					<div class="col-md-4 thumbnail-item">
-							<%= link_to image_tag("#{video.thumbnail_url}"), {:size => '196x111'}, {:action => 'show', :content_item_id => video.id} %>
-							<%= link_to 'select', action: 'show' , content_item_id: video.id %>
-						</div>
-					<% end %>
+						<% if video %>
+							<div class="col-md-4 thumbnail-item">
+							    <%= link_to image_tag("#{video.thumbnail_url}", :size => "180x135"), {:action => 'show', :content_item_id => video.id} %>
+								<%= link_to 'select', action: 'show' , content_item_id: video.id %>
+							</div>
+						<% end %>
 					<% end %>
 
 			</div>
@@ -47,5 +47,5 @@
 	
 <% end %>
 
- 
+
 
