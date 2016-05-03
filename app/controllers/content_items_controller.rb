@@ -14,10 +14,12 @@ class ContentItemsController < ApplicationController
       videos.each do |v|
         @videos<<v
       end
+
+      number_of_pages= @videos.size >= 300? 300 : @videos.size
       
-      @page = WillPaginate::Collection.create(params[:page], 30, 300) do |pager|
+      @page = WillPaginate::Collection.create(params[:page], 30, number_of_pages) do |pager|
                pager.replace @videos[pager.offset, 30]
-            end
+       end
      
    
   end
