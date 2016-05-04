@@ -19,3 +19,4 @@
 .DS_Store
 /config/initializers/yt.rb
 /config/secrets.yml
+/db
