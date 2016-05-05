@@ -1,6 +1,6 @@
 == README
 
-Visit youNote at : https://younote.herokuapp.com/
+Visit youNote at : https://younote.herokuapp.com
 
 Sign up and search for vidoes on Youtube and take notes while watching.
 
