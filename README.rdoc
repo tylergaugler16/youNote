@@ -1,5 +1,10 @@
 == README
 
+Visit youNote at : https://younote.herokuapp.com/
+
+Sign up and search for vidoes on Youtube and take notes while watching.
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
