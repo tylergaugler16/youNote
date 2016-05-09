@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   get 'content_items/search'
   post 'content_items/search'
   get 'content_items/show'
-  get 'help'  => 'static_pages#help'
-  get 'signup'  => 'users#new'
+  get     'help'      => 'static_pages#help'
+  get     'signup'    => 'users#new'
+  get     'login'     => 'sessions#new'
+  post    'login'     => 'sessions#create'
+  delete  'logout'    => 'sessions#destroy'
   resources :users
   
 
