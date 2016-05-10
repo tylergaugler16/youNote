@@ -8,20 +8,17 @@ gem 'yt',                   '0.25.6'
 gem 'will_paginate',        '3.0.6'
 
 
-gem 'autoprefixer-rails'
+gem 'bootstrap-sass',       '3.2.0.0'
 
-group :assets do
-  gem 'bootstrap-sass',       '3.2.0.0'
+# Use SCSS for stylesheets
+gem 'sass-rails', '5.0.2'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '2.5.3'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '4.1.1'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem 'therubyracer', platforms: :ruby
 
-  # Use SCSS for stylesheets
-  gem 'sass-rails', '5.0.2'
-  # Use Uglifier as compressor for JavaScript assets
-  gem 'uglifier', '2.5.3'
-  # Use CoffeeScript for .coffee assets and views
-  gem 'coffee-rails', '4.1.1'
-  # See https://github.com/rails/execjs#readme for more supported runtimes
-  # gem 'therubyracer', platforms: :ruby
-end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
