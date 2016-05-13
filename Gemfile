@@ -7,7 +7,6 @@ gem 'bcrypt',               '3.1.7'
 gem 'yt',                   '0.25.6'
 gem 'will_paginate',        '3.0.6'
 
-
 gem 'bootstrap-sass',       '3.2.0.0'
 
 # Use SCSS for stylesheets
