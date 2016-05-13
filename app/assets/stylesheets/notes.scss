@@ -1,3 +1,28 @@
-// Place all the styles related to the Notes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$custom-blue: #2bb0ff;
+
+
+
+// **************** show page *********************************
+.note-container{
+	h1{
+		margin-top: 50px;
+	}
+	.show-video-container{
+		iframe{
+			width:640;
+			height:360;
+		}	
+		margin-top: 50px;
+		margin-left: 21%;
+	}
+	.description{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		padding:20px;
+		background-color: #f5f5f5;
+    	border: 1px solid #ccc;
+    	font-size: 1.2em;
+
+	}
+	
+}

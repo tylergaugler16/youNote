@@ -7,10 +7,9 @@
 	<div class="description container-fluid">
 		<%= @video.description %>
 	</div>
-	<button type="button" class="btn btn-default btn-block">Create Note</button>
 
 	<% if logged_in? %>
-		<%= button_to "Create Note", new_note_url, :method => :get, :params => {title: "#{@video.title}", content_item_id: "#{@video.id}"} %>
+		<%= button_to "Create Note", new_note_url, :method => :get, :params => {title: "#{@video.title}", content_item_id: "#{@video.id}"}, :class => "btn btn-default btn-block" %>
 	<% end %>
 </div>
 

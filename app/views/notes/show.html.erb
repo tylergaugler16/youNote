@@ -1,7 +1,6 @@
-<div class="note_container">
-	<div class="video ">
+<div class="note-container">
 
-		 <h2><%= @note_video.title %></h2>
+		 <h1><%= @note_video.title %></h1>
 		<div class="show-video-container container-fluid">
 			<iframe width="640" height="360" src="https://www.youtube.com/embed/<%= @note_video.id %>" frameborder="0" allowfullscreen></iframe>
 		</div>
@@ -9,11 +8,11 @@
 			<%= @note_video.description %>
 		</div>
 		
-	</div>
+	
 
 
 	<div class="row">
-	  <div class="col-md-6 col-md-offset-3">
+	  <div class="col-md-10 col-md-offset-1">
 	  	<%= form_for (@note), :url => {:controller => "notes", :action => "update" } do |f| %>
 	      <%= f.label :title %>
 	      <%= f.text_field :title, class: 'form-control', value: @note.title %>

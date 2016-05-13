@@ -1,12 +1,12 @@
 class NotesController < ApplicationController
 
 	def index
-
+		@notes = Note.where(user_id: 3)
 	end
 
 	def show
 		@note= Note.find(params[:id])
-		@note_video=  Yt::Video.new id: params[:content_item_id]
+		@note_video=  Yt::Video.new id: @note.content_item_id
 	end
 
 	def new

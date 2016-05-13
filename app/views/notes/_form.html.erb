@@ -5,9 +5,11 @@
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control', value: params[:title] %>
 
-      <% f.text_field :user_id, class: 'form-control', value: current_user  %>
+      <%= f.hidden_field :user_id, class: 'form-control', value: current_user.id  %>
+      <%= f.hidden_field :content_item_id, class: 'form-control', value: params[:content_item_id]  %>
 
       <%= f.submit "Create my Note", class: "btn btn-primary" %>
+
     <% end %>
   </div>
 </div>
