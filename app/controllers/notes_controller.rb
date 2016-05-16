@@ -2,7 +2,7 @@ class NotesController < ApplicationController
 	# respond_to :html, :js
 
 	def index
-		@notes = Note.where(user_id: 3)
+		@notes = Note.where(user_id: current_user.id)
 	end
 
 	def show
