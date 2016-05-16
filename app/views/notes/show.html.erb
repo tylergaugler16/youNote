@@ -18,7 +18,9 @@
 	      <%= f.text_field :title, class: 'form-control', value: @note.title %>
 
 	      <%= f.label :content %>
-	      <%= f.text_area :content, class: 'form-control'%>
+	      <%= f.text_area :content, class: 'form-control', rows: 20%>
+
+	      <%= f.submit "Update my Note", class: "btn btn-primary" %>
 		<% end %>
 	  </div>
 	</div>

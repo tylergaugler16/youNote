@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+	# respond_to :html, :js
 
 	def index
 		@notes = Note.where(user_id: 3)
@@ -27,6 +28,13 @@ class NotesController < ApplicationController
 	end
 
 	def update
+		@note= Note.find(params[:id])
+		if(@note.update(note_params))
+			redirect_to @note
+		else
+			render 'index'
+		end
+
 
 	end
 
