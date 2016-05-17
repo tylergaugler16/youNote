@@ -7,21 +7,20 @@ class ContentItemsController < ApplicationController
 
 
   def search
-      params[:page] = params[:page] || 1
-      @videos= []
-      videos = Yt::Collections::Videos.new
-      videos.where(q: params[:q], order: 'viewCount')
-      videos.each do |v|
-        @videos<<v
-      end
-
-      number_of_pages= @videos.size >= 300? 300 : @videos.size
-      
-      @page = WillPaginate::Collection.create(params[:page], 30, number_of_pages) do |pager|
-               pager.replace @videos[pager.offset, 30]
-       end
-     
-   
+    if request.method == "POST" 
+        params[:page] = params[:page] || 1
+        @videos= []
+        videos = Yt::Collections::Videos.new
+        videos.where(q: params[:q], order: 'viewCount')
+        videos.each do |v|
+          @videos<<v
+        end
+        number_of_pages= @videos.size >= 300? 300 : @videos.size
+        
+        @page = WillPaginate::Collection.create(params[:page], 30, number_of_pages) do |pager|
+                 pager.replace @videos[pager.offset, 30]
+         end
+     end
   end
 
 
