@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require bootstrap.min.js
+//= custom-notes.js
 //= require turbolinks
 //= require_tree .
