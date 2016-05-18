@@ -47,7 +47,9 @@ updateNote = function(){
 			data: { note: {title: $title , content: $content}, id: noteId },
 			success: function(data){
 				console.log("Data: "+ data[0]);
+				changeTitle($title);
 				alertUser();
+				
 
 			},
 			failure: function(){
@@ -66,6 +68,16 @@ alertUser= function(){
 									"</div>");
 	}
 	
+}
+
+changeTitle= function(new_title){
+	console.log("changeTitle function");
+	console.log(new_title);
+	console.log($('#note_title').val());
+	if( $('.note-title-header').val() != new_title ){
+		console.log("tring to change title");
+		$('.note-title-header').html(new_title);
+	}
 }
 
 
