@@ -16,6 +16,8 @@ class NotesController < ApplicationController
 
 	def create
 		@note= Note.new(note_params)
+
+	
 		if @note.save
 			redirect_to @note
 		else
@@ -29,14 +31,20 @@ class NotesController < ApplicationController
 
 	def update
 		@note= Note.find(params[:id])
-		if(@note.update(note_params))
-			redirect_to @note
-		else
-			render 'index'
-		end
+		@note.update(note_params)
 
+	# if ok
+	    respond_to do |format|
+	      format.json {render json: {:my_status => "updated", :data => "my_data"}}
+	    end
+	 # if something goes wrong: fail the Ajax call
+		rescue Exception => e
+		  puts "Exception #{e.message}"
+		  render :nothing => true, :status => 500
+		
 
 	end
+
 
 	def destroy
 
