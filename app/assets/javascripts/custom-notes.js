@@ -20,6 +20,10 @@ watchChanges = function(){
 		console.log("watching changes..");
 		updateNote();
 	});
+
+	$('#hide-description').on('click',function(){
+		moveDescription();
+	})
 		
 }
 
@@ -68,6 +72,21 @@ changeTitle= function(new_title){
 		console.log("tring to change title");
 		$('.note-title-header').html(new_title);
 	}
+}
+
+moveDescription = function(){
+	console.log('hiding description');
+	if( $('.description').css('display') != 'none'){
+		$('.description').css('display','none');
+		$('#description-message').css('display','none');
+		$('#hide-description').find('span').removeClass('glyphicon-minus').addClass('glyphicon-plus') ; 
+	}
+	else {
+		$('.description').css('display','block');
+		$('#description-message').css('display','inline');
+		$('#hide-description').find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus') ; 
+	}
+	
 }
 
 

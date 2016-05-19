@@ -1,10 +1,13 @@
 
 <div class="note-container">
 
-		 <h1 class="note-title-header"><%= @note.title %></h1>
+		 <h1 class="note-title-header"> <span contenteditable="true"> <%= @note.title %> </span></h1>
 		<div class="show-video-container container-fluid">
 			<iframe width="640" height="360" src="https://www.youtube.com/embed/<%= @note_video.id %>" frameborder="0" allowfullscreen></iframe>
 		</div>
+		<button class="btn btn-default btn-xs" id='hide-description'><span class="glyphicon glyphicon-minus"></span>
+		</button>
+		<span id="description-message">Hide Description</span>
 		<div class="description container-fluid">
 			<%= @note_video.description %>
 		</div>
