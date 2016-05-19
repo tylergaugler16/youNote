@@ -7,7 +7,8 @@ class ContentItemsController < ApplicationController
 
 
   def search
-    if request.method == "POST" 
+   # so that the iniatial get request does not execute an empty search
+    if params[:q] != nil || params[:page] != nil
         params[:page] = params[:page] || 1
         @videos= []
         videos = Yt::Collections::Videos.new

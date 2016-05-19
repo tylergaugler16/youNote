@@ -11,16 +11,6 @@ $(document).ready(function(){
 	}
 	else {console.log("not the right url");}
 
-	// $(".update-note").on('click', function(){
-	// 	var form= $(this.form);
-	// 	console.log(form.attr('action'));
-
-	// 	event.preventDefault();
-
-	
-
-
-	// });
 
 });
 
