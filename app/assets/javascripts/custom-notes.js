@@ -24,7 +24,12 @@ watchChanges = function(){
 
 	$('#hide-description').on('click',function(){
 		moveDescription();
-	})
+	});
+
+	$('#font-size').change(function(){
+		console.log('i wanna change da font');
+		changeFontSize();
+	});
 		
 }
 
@@ -88,6 +93,12 @@ moveDescription = function(){
 		$('#hide-description').find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus') ; 
 	}
 	
+}
+
+changeFontSize= function(){
+	var value= $('#font-size').val();
+	console.log(typeof value);
+	$('#note_content').css('font-size', parseInt(value));
 }
 
 

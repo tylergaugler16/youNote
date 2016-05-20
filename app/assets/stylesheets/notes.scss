@@ -26,6 +26,10 @@ $custom-gray: #f5f5f5;
 
 	}
 
+	#note_content{
+		font-size: 14px;
+	}
+
 	.uneditable-note{
 		margin-top: 10px;
 		padding: 10px;
@@ -34,7 +38,23 @@ $custom-gray: #f5f5f5;
 		font-size: 1.2em;
 
 	}
+	
+	.edit-options{
 
+
+		#font-size{
+			width:25%;
+			float:left;
+
+		}
+		.edit-options-label{
+			display: block;
+			font-weight: bold;
+		}
+
+
+	}
+	
 	
 	
 }
