@@ -2,6 +2,7 @@ console.log("inside custom-notes.js");
 
 
 $(document).ready(function(){
+	moveDescription();
 	$pathname = window.location.pathname.toString();
 	console.log("path: "+$pathname);
 	
@@ -31,7 +32,7 @@ updateNote = function(){
 	console.log("making ajax request!");
 	var regExp= /^\/notes\/(\d+)/;
 	var noteId= regExp.exec($pathname)[1];
-	var $title= $('#note_title').val();
+	var $title= $('.note-title-header').text();
 	var $content= $('#note_content').val();
 
 		$.ajax({

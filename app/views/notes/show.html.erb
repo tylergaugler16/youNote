@@ -1,5 +1,5 @@
 
-<div class="note-container">
+<div class="note-container container-fluid">
 
 		 <h1 class="note-title-header"> <span contenteditable="true"> <%= @note.title %> </span></h1>
 		<div class="show-video-container container-fluid">
@@ -14,19 +14,27 @@
 		
 	
 
-
+<% if @note.user_id == current_user.id %>	
 	<div class="row">
-	  <div class="col-md-10 col-md-offset-1">
+	  <div class="col-md-12">
 	  	<%= form_for @note, :remote => true, :url => {:controller => "notes", :action => "update"} do |f| %>
-	      <%= f.label :title %>
-	      <%= f.text_field :title, class: 'form-control', value: @note.title %>
-
+	     
 	      <%= f.label :content %>
 	      <%= f.text_area :content, class: 'form-control', rows: 20%>
-
+			
+		
 	      <%= f.submit "Update my Note", class: "btn btn-primary update-note" %>
+
 		<% end %>
 	  </div>
 	</div>
+<% else %>
+	<div class="row">
+		<div class="col-md-12 uneditable-note">
+			<%= @note.content %>
+		</div>
+	</div>
+
+<% end %>
 
 </div>

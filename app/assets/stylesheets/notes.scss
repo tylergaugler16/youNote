@@ -1,4 +1,5 @@
 $custom-blue: #2bb0ff;
+$custom-gray: #f5f5f5;
 
 
 
@@ -19,10 +20,21 @@ $custom-blue: #2bb0ff;
 		margin-top: 10px;
 		margin-bottom: 10px;
 		padding:20px;
-		background-color: #f5f5f5;
+		background-color: $custom-gray;
     	border: 1px solid #ccc;
     	font-size: 1.2em;
 
 	}
+
+	.uneditable-note{
+		margin-top: 10px;
+		padding: 10px;
+		// background-color: $custom-gray;
+		border: 1px solid #ccc;
+		font-size: 1.2em;
+
+	}
+
+	
 	
 }
