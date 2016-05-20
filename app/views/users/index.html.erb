@@ -1,5 +1,27 @@
-<% @users.each do |user| %>
 
-	<h2> <%= link_to user.name, user %> </h2>
+<div class="container-fluid user_list">
 
-<% end %>
+	<h1>User List</h1>
+
+	<% @users.each.with_index do |user,index| %>
+		<div class="panel-group">
+		  <div class="panel panel-default">
+		    <div class="panel-heading">
+		      <h4 class="panel-title">
+		        <a data-toggle="collapse" href="#collapse<%= index %>"> <%= user.name %> </a>
+		      </h4>
+		    </div>
+
+		    <div id="collapse<%= index %>" class="panel-collapse collapse">
+		      <div class="panel-body">Number of Notes: <%= user.notes.size %> </div>
+		      <div class="panel-footer"> <%= link_to 'View Profile', user %> </div>
+		    </div>
+		  </div>
+		</div>
+
+	 <% end %> 
+
+	
+
+</div>
+

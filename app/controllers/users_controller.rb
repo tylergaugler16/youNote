@@ -10,6 +10,7 @@ end
 
 def show
 	@user= User.find(params[:id])
+	@top_notes= @user.notes.limit(5);
 end
 
 def create 
@@ -24,9 +25,6 @@ def create
 	    end
 
 end
-
-
-
 
 
 
