@@ -72,8 +72,6 @@ alertUser= function(){
 
 changeTitle= function(new_title){
 	console.log("changeTitle function");
-	console.log(new_title);
-	console.log($('#note_title').val());
 	if( $('.note-title-header').val() != new_title ){
 		console.log("tring to change title");
 		$('.note-title-header').html(new_title);
@@ -97,7 +95,6 @@ moveDescription = function(){
 
 changeFontSize= function(){
 	var value= $('#font-size').val();
-	console.log(typeof value);
 	$('#note_content').css('font-size', parseInt(value));
 }
 
