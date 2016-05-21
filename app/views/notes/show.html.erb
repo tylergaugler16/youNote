@@ -1,53 +1,32 @@
 
-<div class="note-container container">
+<div class="note-container container-fluid">
 
 		 <h1 class="note-title-header"> <span <%= (@note.user_id == current_user.id)?  "contenteditable=true" : '' %> > <%= @note.title %> </span></h1>
-		<div class="show-video-container container-fluid">
-			<iframe width="640" height="360" src="https://www.youtube.com/embed/<%= @note_video.id %>" frameborder="0" allowfullscreen></iframe>
-		</div>
-		<button class="btn btn-default btn-xs" id='hide-description'><span class="glyphicon glyphicon-minus"></span>
-		</button>
-		<span id="description-message">Hide Description</span>
-		<div class="description container-fluid">
-			<%= @note_video.description %>
-		</div>
-		
-	
-
-<% if @note.user_id == current_user.id %>	
 	<div class="row">
-	  <div class="col-md-12">
-	  	<%= form_for @note, :remote => true, :url => {:controller => "notes", :action => "update"} do |f| %>
-	     
-	      <%= f.label :content %>
-	      <%= f.text_area :content, class: 'form-control', rows: 20%>
-			<div class="edit-options row">
-				<div class="col-md-3">
-					<span class="edit-options-label">Font Size</span>
-					<select id= "font-size">
-						<% [12,14,16,18,20].each do |num| %>
-					     <option value="<%= num %>" <%= num == 14 ? "selected" : "" %>><%= num %></option>
-					    <% end %>
-					</select>	
-				</div>
-				
+		<div class="col-md-6">
+			<div class="show-video-container container-fluid">
+				<iframe width="608" height="342" src="https://www.youtube.com/embed/<%= @note_video.id %>" frameborder="0" allowfullscreen></iframe>
 			</div>
-		
-	      <%= f.submit "Update my Note", class: "btn btn-primary update-note" %>
-
-		<% end %>
-	  </div>
-
-	
-
-	</div>
-<% else %>
-	<div class="row">
-		<div class="col-md-12 uneditable-note">
-			<%= @note.content %>
+			<button class="btn btn-default btn-xs" id='hide-description'><span class="glyphicon glyphicon-minus"></span>
+			</button>
+			<span id="description-message">Hide Description</span>
+			<div class="description container-fluid">
+				<%= @note_video.description %>
+			</div>
+			
+		</div>
+		<div class="col-md-6">
+			<% if @note.user_id == current_user.id %>	
+				<%= render 'editableNote' %>
+			<% else %>
+				<%= render 'uneditableNote' %>
+			<% end %>
 		</div>
 	</div>
+		
 
-<% end %>
+		
+	
+
 
 </div>

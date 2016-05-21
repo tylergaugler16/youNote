@@ -1,0 +1,24 @@
+<div class="row">
+	  <div class="col-md-12">
+	  	<%= form_for @note, :remote => true, :url => {:controller => "notes", :action => "update"} do |f| %>
+	     
+	     
+	      <%= f.text_area :content, class: 'form-control', rows: 17%>
+			<div class="edit-options row">
+				<div class="col-md-3">
+					<span class="edit-options-label">Font Size</span>
+					<select id= "font-size">
+						<% [12,14,16,18,20].each do |num| %>
+					     <option value="<%= num %>" <%= num == 14 ? "selected" : "" %>><%= num %></option>
+					    <% end %>
+					</select>	
+				</div>
+				
+			</div>
+		
+	      <%= f.submit "Update my Note", class: "btn btn-primary update-note" %>
+
+		<% end %>
+	  </div>
+
+	</div>
