@@ -16,6 +16,8 @@ class NotesController < ApplicationController
 
 	def create
 		@note= Note.new(note_params)
+		puts "TYLER:::::"
+		puts note_params
 
 	
 		if @note.save
@@ -59,6 +61,6 @@ class NotesController < ApplicationController
 	end
 
 	def note_params
-		params.require(:note).permit(:title,:content,:user_id,:content_item_id)
+		params.require(:note).permit(:title,:content,:user_id,:content_item_id, :public)
 	end
 end

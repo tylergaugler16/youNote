@@ -7,7 +7,7 @@
 
       <%= f.hidden_field :user_id, class: 'form-control', value: current_user.id  %>
       <%= f.hidden_field :content_item_id, class: 'form-control', value: params[:content_item_id]  %>
-      <%= f.hidden_field :public, class: 'form-control', value: true %>
+      <%= f.hidden_field :public, class: 'form-control', value: 'false' %>
 
       <%= f.submit "Create my Note", class: "btn btn-primary" %>
 

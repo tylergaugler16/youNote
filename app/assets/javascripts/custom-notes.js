@@ -30,6 +30,14 @@ watchChanges = function(){
 		console.log('i wanna change da font');
 		changeFontSize();
 	});
+
+	$('#hide-note-settings').on('click', function(){
+		moveSettings();
+	});
+
+	$('#public-checkbox').on('change', function(){
+		moveCheckNotification();
+	});
 		
 }
 
@@ -39,12 +47,14 @@ updateNote = function(){
 	var noteId= regExp.exec($pathname)[1];
 	var $title= $('.note-title-header').text();
 	var $content= $('#note_content').val();
+	var $public_val= $('#public-checkbox').is(':checked');
+	console.log($public_val);
 
 		$.ajax({
 			type: "patch",
 			url: '/notes/'+noteId,
 			dataType: 'json',
-			data: { note: {title: $title , content: $content}, id: noteId },
+			data: { note: {title: $title , content: $content, public: $public_val }, id: noteId},
 			success: function(data){
 				console.log("Data: "+ data[0]);
 				changeTitle($title);
@@ -96,6 +106,29 @@ moveDescription = function(){
 changeFontSize= function(){
 	var value= $('#font-size').val();
 	$('#note_content').css('font-size', parseInt(value));
+}
+
+moveSettings = function(){
+	if( $('.note-settings').css('display') != 'none' ){
+		$('.note-settings').css('display','none');
+	}
+	else {
+		$('.note-settings').css('display','block');
+		
+	}
+}
+
+moveCheckNotification = function(){
+	console.log("trying to change notif");
+	if ($('#public-checkbox').is(':checked')){
+		console.log("yeet");
+		$('#check-for-public').css('visibility', 'visible');
+		$('#message-for-public').css('visibility','visible');
+	}
+	else{
+		$('#check-for-public').css('visibility', 'hidden');
+		$('#message-for-public').css('visibility','hidden');
+	}
 }
 
 

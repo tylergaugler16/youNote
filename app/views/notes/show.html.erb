@@ -1,6 +1,5 @@
 
 <div class="note-container container-fluid">
-
 		 <h1 class="note-title-header"> <span <%= (@note.user_id == current_user.id)?  "contenteditable=true" : '' %> > <%= @note.title %> </span></h1>
 	<div class="row">
 		<div class="col-md-6">
@@ -21,6 +20,27 @@
 			<% else %>
 				<%= render 'uneditableNote' %>
 			<% end %>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+	  	<button class="btn btn-default btn-sm" id='hide-note-settings'><span class="glyphicon glyphicon-warning-sign"></span>
+	   </button>
+	  </div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 note-settings" id="" style= "display:none;" >
+				<span> <input type="checkbox" name="public" value="publics" id="public-checkbox" <%= (@note.public?)? "checked": "" %>> </span>
+	  			<span>Make Your Note Public to All Users</span> <br>
+	  			<span class="glyphicon glyphicon-ok" <%= (@note.public?)? "style= 'visibility:visible'" : "style= 'visibility:hidden'" %> id='check-for-public'></span>
+	  			<span <%= (@note.public?)? "style= 'visibility:visible'" : "style= 'visibility:hidden'" %> id='message-for-public'>Your Note is Public for all Users to see!</span>
+	  		
+		</div>
+
+		<div class="col-md-6 note-settings" style= 'display:none;'>
+			<span>DELETE NOTE</span>
 		</div>
 	</div>
 		

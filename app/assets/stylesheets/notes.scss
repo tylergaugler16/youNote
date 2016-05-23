@@ -36,6 +36,8 @@ $custom-gray: #f5f5f5;
 		overflow-y: scroll;
 	}
 
+
+
 	.uneditable-note{
 		margin-top: 10px;
 		padding: 10px;
@@ -59,6 +61,24 @@ $custom-gray: #f5f5f5;
 		}
 
 
+	}
+
+
+	#hide-note-settings{
+		margin-top:15px;
+	}
+
+	.note-settings{
+		height:100px;
+		background-color:$custom-gray;
+		text-align: center;
+		span{
+			line-height: 50px;
+			// display: block;
+			input[type=checkbox]{
+				width:10px;
+			}
+		}
 	}
 	
 	.container{
