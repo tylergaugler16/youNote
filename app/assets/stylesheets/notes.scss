@@ -39,11 +39,14 @@ $custom-gray: #f5f5f5;
 
 
 	.uneditable-note{
-		margin-top: 10px;
+		margin-left: 15px;
 		padding: 10px;
+		height: 400px;
 		// background-color: $custom-gray;
 		border: 1px solid #ccc;
 		font-size: 1.2em;
+		resize: none;
+		overflow-y: scroll;
 
 	}
 	
