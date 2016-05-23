@@ -2,7 +2,8 @@ class NotesController < ApplicationController
 	# respond_to :html, :js
 
 	def index
-		@notes = Note.where(user_id: current_user.id)
+		@public_notes = Note.where(user_id: current_user.id, public: true)
+		@private_notes= Note.where(user_id: current_user.id, public: false)
 	end
 
 	def show
@@ -16,10 +17,7 @@ class NotesController < ApplicationController
 
 	def create
 		@note= Note.new(note_params)
-		puts "TYLER:::::"
-		puts note_params
 
-	
 		if @note.save
 			redirect_to @note
 		else

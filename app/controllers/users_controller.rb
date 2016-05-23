@@ -10,7 +10,7 @@ end
 
 def show
 	@user= User.find(params[:id])
-	@top_notes= @user.notes.limit(5);
+	@top_notes=  Note.where(user_id: @user.id, public: true).limit(5);
 end
 
 def create 

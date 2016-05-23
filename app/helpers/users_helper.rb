@@ -23,4 +23,5 @@ module UsersHelper
 	    response.code.to_i != 404 # from d=404 parameter
 	end
 
+
 end

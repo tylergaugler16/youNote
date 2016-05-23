@@ -17,7 +17,7 @@ $(document).ready(function(){
 
 watchChanges = function(){
 	//if changes call
-	$('input[type=submit]').on('click', function(){
+	$('.update-note').on('click', function(){
 		console.log("watching changes..");
 		updateNote();
 	});
@@ -57,7 +57,6 @@ updateNote = function(){
 			data: { note: {title: $title , content: $content, public: $public_val }, id: noteId},
 			success: function(data){
 				console.log("Data: "+ data[0]);
-				changeTitle($title);
 				alertUser();
 				
 
@@ -78,14 +77,6 @@ alertUser= function(){
 									"</div>");
 	}
 	
-}
-
-changeTitle= function(new_title){
-	console.log("changeTitle function");
-	if( $('.note-title-header').val() != new_title ){
-		console.log("tring to change title");
-		$('.note-title-header').html(new_title);
-	}
 }
 
 moveDescription = function(){

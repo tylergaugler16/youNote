@@ -1,6 +1,6 @@
 
 <div class="note-container container-fluid">
-		 <h1 class="note-title-header"> <span <%= (@note.user_id == current_user.id)?  "contenteditable=true" : '' %> > <%= @note.title %> </span></h1>
+		 <h1 class="note-title-header"> <span <%= ((current_user) && @note.user_id == current_user.id)?  "contenteditable=true" : '' %> > <%= @note.title %> </span></h1>
 	<div class="row">
 		<div class="col-md-6">
 			<div class="show-video-container container-fluid">
@@ -15,7 +15,7 @@
 			
 		</div>
 		<div class="col-md-6">
-			<% if @note.user_id == current_user.id %>	
+			<% if ((current_user) && @note.user_id == current_user.id) %>	
 				<%= render 'editableNote' %>
 			<% else %>
 				<%= render 'uneditableNote' %>
@@ -23,7 +23,7 @@
 		</div>
 	</div>
 
-<% if @note.user_id == current_user.id  %>
+<% if current_user && @note.user_id == current_user.id  %>
 	<div class="row">
 		<div class="col-md-12">
 	  	<button class="btn btn-default btn-sm" id='hide-note-settings'><span class="glyphicon glyphicon-warning-sign"></span>
@@ -41,8 +41,8 @@
 		</div>
 
 		<div class="col-md-6 note-settings" style= 'display:none;'>
-			<span>DELETE NOTE</span> <br>
-			<%= button_to 'Delete Note', @note, :method => :delete, :params =>{ id: @note.id}, :class => "btn btn-default btn-block" %>
+			<span><b>Warning: This Will Permanently Delete Your Note</b></span> <br>
+			<%= button_to 'Delete Note', @note, :method => :delete, :params =>{ id: @note.id}, :class => "btn btn-default btn-block ", :id=> 'delete-note-button' , :onclick => "return confirm('Are You Sure You Want to Delete Your Note?');" %>
 		</div>
 	</div>
 		

@@ -20,6 +20,8 @@
 						<% if video %>
 							<div class="col-md-4 thumbnail-item">
 							    <%= link_to image_tag("#{video.thumbnail_url}", :size => "180x135"), {:action => 'show', :content_item_id => video.id} %>
+							    <br>
+							    <%= link_to video.title, {:action => 'show', :content_item_id => video.id} %> 
 							</div>
 						<% end %>
 					<% end %>
