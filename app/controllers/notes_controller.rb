@@ -49,6 +49,9 @@ class NotesController < ApplicationController
 
 
 	def destroy
+		Note.find(params[:id]).destroy
+
+		redirect_to notes_path
 
 	end
 
@@ -63,4 +66,6 @@ class NotesController < ApplicationController
 	def note_params
 		params.require(:note).permit(:title,:content,:user_id,:content_item_id, :public)
 	end
+
+
 end

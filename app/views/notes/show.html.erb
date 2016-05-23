@@ -23,6 +23,7 @@
 		</div>
 	</div>
 
+<% if @note.user_id == current_user.id  %>
 	<div class="row">
 		<div class="col-md-12">
 	  	<button class="btn btn-default btn-sm" id='hide-note-settings'><span class="glyphicon glyphicon-warning-sign"></span>
@@ -34,17 +35,18 @@
 		<div class="col-md-6 note-settings" id="" style= "display:none;" >
 				<span> <input type="checkbox" name="public" value="publics" id="public-checkbox" <%= (@note.public?)? "checked": "" %>> </span>
 	  			<span>Make Your Note Public to All Users</span> <br>
-	  			<span class="glyphicon glyphicon-ok" <%= (@note.public?)? "style= 'visibility:visible'" : "style= 'visibility:hidden'" %> id='check-for-public'></span>
-	  			<span <%= (@note.public?)? "style= 'visibility:visible'" : "style= 'visibility:hidden'" %> id='message-for-public'>Your Note is Public for all Users to see!</span>
+	  			<span class="glyphicon glyphicon-ok" <%= (@note.public?)? "style= visibility:visible" : "style= visibility:hidden" %> id='check-for-public'></span>
+	  			<span <%= (note_public?)? "style= visibility:visible" : "style= visibility:hidden" %> id='message-for-public'>Your Note is Public for all Users to see!</span>
 	  		
 		</div>
 
 		<div class="col-md-6 note-settings" style= 'display:none;'>
-			<span>DELETE NOTE</span>
+			<span>DELETE NOTE</span> <br>
+			<%= button_to 'Delete Note', @note, :method => :delete, :params =>{ id: @note.id}, :class => "btn btn-default btn-block" %>
 		</div>
 	</div>
 		
-
+<% end %>
 		
 	
 
