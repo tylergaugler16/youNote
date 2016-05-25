@@ -24,10 +24,9 @@ watchChanges = function(){
 		moveDescription();
 	});
 
-	$('.form-control').on('click', function(e){
-		console.log("preventDefault");
-		e.preventDefault();
-	})
+	$('#note-content').keypress(function(e){
+		
+	});	
 
 
 	$('#font-size').change(function(){
@@ -36,9 +35,12 @@ watchChanges = function(){
 	});
 
 	$('#embolden').on('click', function(){
-		console.log("emboldeing");
-		document.execCommand('bold',false, null);
-		return false;
+		document.execCommand('bold');
+		
+	});
+
+	$('#italicize').on('click', function(){
+		document.execCommand('italic');
 	});
 
 	$('#hide-note-settings').on('click', function(){
@@ -56,7 +58,7 @@ updateNote = function(){
 	var regExp= /^\/notes\/(\d+)/;
 	var noteId= regExp.exec($pathname)[1];
 	var $title= $('.note-title-header').text();
-	var $content= $('#note_content').val();
+	var $content= $('#note-content').html();
 	var $public_val= $('#public-checkbox').is(':checked');
 	console.log($public_val);
 
@@ -106,7 +108,7 @@ moveDescription = function(){
 
 changeFontSize= function(){
 	var value= $('#font-size').val();
-	$('#note_content').css('font-size', parseInt(value));
+	$('#note-content').css('font-size', parseInt(value));
 }
 
 moveSettings = function(){

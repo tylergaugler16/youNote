@@ -3,16 +3,28 @@
 	  	<%= form_for @note, :remote => true, :url => {:controller => "notes", :action => "update"} do |f| %>
 	     
 	     
-	      <%= f.text_area :content, class: 'form-control', rows: 17 %>
+	      
+	      <div id="note-content" contenteditable>
+	      	<%= @note.content.html_safe %>
+	      </div>
 			<div class="edit-options row">
 				<div class="col-md-3">
-					<span class="edit-options-label">Font Size</span>
 					<select id= "font-size">
+						<option value="14" selected> Font Size </option>
 						<% [12,14,16,18,20].each do |num| %>
-					     <option value="<%= num %>" <%= num == 14 ? "selected" : "" %>><%= num %></option>
+					     <option value="<%= num %>"><%= num %></option>
 					    <% end %>
 					</select>
-					<button id="embolden">Bold</button>	
+				</div>
+				<div class="col-md-1">
+					<button id="embolden" class-"btn btn-group-xs"><span class="glyphicon glyphicon-bold"></span></button>	
+				</div>
+
+				<div class="col-md-1">
+					<button id="italicize" class-"btn btn-group-xs"><span class="glyphicon glyphicon-italic"></span></button>	
+				</div>
+				<div class="col-md-1">
+					<button id="underline" class="btn btn-group-xs"><span><b>U</b></span></button>
 				</div>
 				
 			</div>

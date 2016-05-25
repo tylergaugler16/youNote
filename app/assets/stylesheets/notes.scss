@@ -30,8 +30,11 @@ $custom-red:#d75757;
 
 	}
 
-	#note_content{
+	#note-content{
+		height: 380px;
 		margin-left: 15px;
+		padding:10px;
+		border: 1px solid #ccc;
 		font-size: 14px;
 		resize: none;
 		overflow-y: scroll;
@@ -52,16 +55,21 @@ $custom-red:#d75757;
 	}
 	
 	.edit-options{
-
+		padding:10px;
 
 		#font-size{
-			// width:25%;
-			float:left;
+			width:80%;
+			height:25px;
+			float:right;
 
 		}
 		.edit-options-label{
-			display: block;
+			display: inline-block;
 			font-weight: bold;
+		}
+
+		#embolden{
+			height:25px;
 		}
 
 
