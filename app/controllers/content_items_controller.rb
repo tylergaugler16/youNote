@@ -12,7 +12,7 @@ class ContentItemsController < ApplicationController
         params[:page] = params[:page] || 1
         @videos= []
         videos = Yt::Collections::Videos.new
-        videos.where(q: params[:q], order: 'viewCount')
+        videos.where(q: params[:q], order: 'relevance', )
         videos.each do |v|
           @videos<<v
         end

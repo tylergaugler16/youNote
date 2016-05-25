@@ -4,7 +4,7 @@
 	height:660px;
 	background-image: image-url('videonote2.jpg');
 	padding-top:50px;
-
+	text-align:center;
 	
 	h1{
 		background: rgb(0, 0, 0); 
@@ -22,6 +22,21 @@
 		font-size: 1.3em;
 		color:white;
 		bottom:0;
+	}
+
+	span{
+		 background: rgb(0, 0, 0); 
+   	  	 background: rgba(0, 0, 0, 0.5);
+   	  	 font-size: 1.3em;
+   	  	 padding:3px;
+   	  	 a{
+   	  	 	color:white;
+   	  	 	&:hover{
+   	  	 		// font-weight: bold;
+   	  	 		// text-decoration: none;
+   	  	 	}
+   	  	 }
+
 	}
 
 }

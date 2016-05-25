@@ -1,5 +1,3 @@
-console.log("inside custom-notes.js");
-
 
 $(document).ready(function(){
 	moveDescription();
@@ -26,9 +24,21 @@ watchChanges = function(){
 		moveDescription();
 	});
 
+	$('.form-control').on('click', function(e){
+		console.log("preventDefault");
+		e.preventDefault();
+	})
+
+
 	$('#font-size').change(function(){
 		console.log('i wanna change da font');
 		changeFontSize();
+	});
+
+	$('#embolden').on('click', function(){
+		console.log("emboldeing");
+		document.execCommand('bold',false, null);
+		return false;
 	});
 
 	$('#hide-note-settings').on('click', function(){
