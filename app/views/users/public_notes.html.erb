@@ -1,0 +1,11 @@
+<h1> <%= @user.name %>'s notes </h1>
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+    	<span> <b>Public Notes</b> <span class="badge"><%= @public_notes.size %></span ></span><br>
+    </div>
+    <% @public_notes.each do |note| %>
+    	<div class="panel-body"> <%= link_to note.title, note %> </div>
+    <% end %>
+</div>

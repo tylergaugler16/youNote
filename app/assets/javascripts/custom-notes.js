@@ -24,23 +24,33 @@ watchChanges = function(){
 		moveDescription();
 	});
 
-	$('#note-content').keypress(function(e){
+	$('#note-content').on('keydown', function(e){
 		
-	});	
+
+	});
 
 
 	$('#font-size').change(function(){
-		console.log('i wanna change da font');
 		changeFontSize();
 	});
 
 	$('#embolden').on('click', function(){
 		document.execCommand('bold');
-		
 	});
 
 	$('#italicize').on('click', function(){
 		document.execCommand('italic');
+	});
+
+	$('#underline').on('click',function(){
+		document.execCommand('underline');
+	});
+
+	$('#create-table').on('click',function(){	
+	console.log("creating table");	
+		insertTable();
+		
+		// $(table).appendTo('')
 	});
 
 	$('#hide-note-settings').on('click', function(){
@@ -132,6 +142,35 @@ moveCheckNotification = function(){
 		$('#check-for-public').css('visibility', 'hidden');
 		$('#message-for-public').css('visibility','hidden');
 	}
+}
+
+insertTable = function(){
+	console.log("inserting table");
+	var rows= parseInt($('#table-rows').val());
+	var columns = parseInt($('#table-columns').val());
+	var table= "<table class=\" table table-bordered\"  contenteditable>";
+
+	console.log(columns);
+
+
+	for(i= 0; i<rows; i++){
+
+		if(i==0){ 
+			table=table.concat("<thead><tr>");
+			for(t=0;t<columns;t++){
+				table= table.concat("<th>Header</th>")
+			}
+			table= table.concat("</tr> </thead> <tbody>");
+		}
+		table=table.concat("<tr>");
+		for(c=0;c<columns;c++){
+			table=table.concat("<td>value</td>");
+		}
+		table=table.concat("</tr>");
+	}
+	table=table.concat("</tbody></table>");
+
+	$('#note-content').append(table);
 }
 
 

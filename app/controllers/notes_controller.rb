@@ -55,6 +55,8 @@ class NotesController < ApplicationController
 
 
 
+
+
 	private
 
 	def find_note

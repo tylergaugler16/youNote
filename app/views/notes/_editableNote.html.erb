@@ -5,7 +5,7 @@
 	     
 	      
 	      <div id="note-content" contenteditable>
-	      	<%= @note.content.html_safe %>
+	      	<%= (@note.content != nil)? @note.content.html_safe : @note.content %>
 	      </div>
 			<div class="edit-options row">
 				<div class="col-md-3">
@@ -17,14 +17,18 @@
 					</select>
 				</div>
 				<div class="col-md-1">
-					<button id="embolden" class-"btn btn-group-xs"><span class="glyphicon glyphicon-bold"></span></button>	
-				</div>
-
-				<div class="col-md-1">
-					<button id="italicize" class-"btn btn-group-xs"><span class="glyphicon glyphicon-italic"></span></button>	
+					<button id="embolden" class="btn btn-default btn-group-xs"><span class="glyphicon glyphicon-bold"></span></button>	
 				</div>
 				<div class="col-md-1">
-					<button id="underline" class="btn btn-group-xs"><span><b>U</b></span></button>
+					<button id="italicize" class="btn btn-default btn-group-xs"><span class="glyphicon glyphicon-italic"></span></button>	
+				</div>
+				<div class="col-md-1">
+					<button id="underline" class="btn btn-default btn-group-xs"><span><b>U</b></span></button>
+				</div>
+				<div class="col-md-6">
+					<button id="create-table" class="btn btn-default btn-group-xs"><span>Create Table</span></button>
+					<input type="text" id ="table-rows" placeholder="rows">
+					<input type="text" id ="table-columns" placeholder="columns">
 				</div>
 				
 			</div>

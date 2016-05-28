@@ -13,7 +13,7 @@
   		<% if ( (current_user) && current_user.id == @user.id )%>
 		<%= link_to "View All My Notes", notes_path %>
 		<% else %>
-		<%= link_to "View Public Notes", '#' %>
+		<%= link_to "View Public Notes", controller: "users", action: "public_notes" ,params: {id: @user.id} %>
 		<% end %>
 	</div>
 	<div class="col-md-6">

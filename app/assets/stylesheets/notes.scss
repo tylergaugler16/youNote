@@ -58,6 +58,7 @@ $custom-red:#d75757;
 		padding:10px;
 
 		#font-size{
+			margin-top: 5px;
 			width:80%;
 			height:25px;
 			float:right;
@@ -69,7 +70,19 @@ $custom-red:#d75757;
 		}
 
 		#embolden{
-			height:25px;
+			// height:25px;
+		}
+		#underline{
+			// padding:0;
+			span{
+				font-family: 'Trebuchet MS';			}
+		}
+		#create-table{
+			display:inline-block;
+		}
+		#table-rows, #table-columns{
+			display:inline-block;
+			width:25%;
 		}
 
 

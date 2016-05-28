@@ -26,6 +26,11 @@ def create
 
 end
 
+def public_notes
+	@user= User.find(params[:id])
+	@public_notes= @user.notes.where(public: true)
+end
+
 
 
 private
