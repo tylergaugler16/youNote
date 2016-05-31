@@ -7,10 +7,14 @@
   box-sizing:         border-box;
 }
 $gray-medium-light: #eaeaea;
+$background-gray:#F8F8F8;
 $custom-blue: #2bb0ff;
 
 /* universal */
 
+body{
+  background-color: $background-gray;
+}
 div.container{
   padding-left:0;
   padding-right:0;
@@ -80,6 +84,22 @@ header{
     }
   }
 
+}
+
+#custom-navbar{
+  padding-top:25px;
+  height:100px;
+
+  .navbar-brand{
+      font-size:2.2em;
+  }
+  #myNavbar li a{
+      border-left: 2px solid $gray-medium-light;
+      font-size: 1.2em;
+  }
+  .dropdown-menu li a{
+    font-size: 1em;
+  }
 }
 
 

@@ -93,7 +93,7 @@ updateNote = function(){
 
 alertUser= function(){
 	if(! $('.alert').length ){
-		$('.space').after("<div class='alert alert-success' >"+
+		$('.navbar').after("<div class='alert alert-success' >"+
 										"<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>" +
 					  					"<strong>Updated Note!</strong>" + 
 									"</div>");
