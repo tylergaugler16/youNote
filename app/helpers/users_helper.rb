@@ -8,7 +8,7 @@ module UsersHelper
     		gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
     		image_tag(gravatar_url, alt: user.name, class: "gravatar")
     	else
-    		image_tag("profile-default.png", alt: user.name)
+    		image_tag("profile-default.png", alt: user.name, title: "Create a Gravatar to display a cusom photo")
 		end
 	end
 

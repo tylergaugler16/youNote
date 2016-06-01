@@ -19,18 +19,19 @@ form.new_user{
 .user_info {
     margin-top: 30px;
 
-
 	.profile-picture{
+		padding:0;
 		margin-left: 0;
 		width: 150px;
 		height:150px;
-		padding:10px;
 		border: 1px solid black;
 		display: inline-block;
+		img{
+			height:100%;
+			width:100%;
+		}
 	}
 	h1{
-		
-		
 		font-size: 3em;
 	}
 
@@ -50,9 +51,7 @@ form.new_user{
 			background-color: $custom-blue;
 			overflow: hidden;
 		}
-
 	}
-	
   }
 
 
