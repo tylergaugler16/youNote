@@ -2,8 +2,6 @@
 $(document).ready(function(){
 	moveDescription();
 	$pathname = window.location.pathname.toString();
-	console.log("path: "+$pathname);
-	
 
 	if($pathname.match(/^\/notes\/\d+/)){
 		watchChanges();
@@ -14,19 +12,21 @@ $(document).ready(function(){
 });
 
 watchChanges = function(){
-	//if changes call
-	$('.update-note').on('click', function(){
-		console.log("watching changes..");
-		updateNote();
+	$('.update-note').on('click', function(e){
+		e.preventDefault();
+		updateNote(true);
 	});
+
+	setInterval(function(){ 
+		updateNote(false); 
+	}, 60000);
 
 	$('#hide-description').on('click',function(){
 		moveDescription();
 	});
 
 	$('#note-content').on('keydown', function(e){
-		
-
+	
 	});
 
 
@@ -47,10 +47,7 @@ watchChanges = function(){
 	});
 
 	$('#create-table').on('click',function(){	
-	console.log("creating table");	
 		insertTable();
-		
-		// $(table).appendTo('')
 	});
 
 	$('#hide-note-settings').on('click', function(){
@@ -63,14 +60,12 @@ watchChanges = function(){
 		
 }
 
-updateNote = function(){
-	console.log("making ajax request!");
-	var regExp= /^\/notes\/(\d+)/;
-	var noteId= regExp.exec($pathname)[1];
-	var $title= $('.note-title-header').text();
-	var $content= $('#note-content').html();
-	var $public_val= $('#public-checkbox').is(':checked');
-	console.log($public_val);
+updateNote = function(should_notify){
+	var regExp 		= /^\/notes\/(\d+)/;
+	var noteId 		= regExp.exec($pathname)[1];
+	var $title 		= $('.note-title-header').text();
+	var $content 	= $('#note-content').html();
+	var $public_val	= $('#public-checkbox').is(':checked');
 
 		$.ajax({
 			type: "patch",
@@ -78,10 +73,7 @@ updateNote = function(){
 			dataType: 'json',
 			data: { note: {title: $title , content: $content, public: $public_val }, id: noteId},
 			success: function(data){
-				console.log("Data: "+ data[0]);
-				alertUser();
-				
-
+				if(should_notify){ alertUser(); }
 			},
 			failure: function(){
 				console.log('didnt work');
@@ -96,7 +88,7 @@ alertUser= function(){
 		$('.navbar').after("<div class='alert alert-success' >"+
 										"<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>" +
 					  					"<strong>Updated Note!</strong>" + 
-									"</div>");
+										"</div>");
 	}
 	
 }
@@ -132,9 +124,7 @@ moveSettings = function(){
 }
 
 moveCheckNotification = function(){
-	console.log("trying to change notif");
 	if ($('#public-checkbox').is(':checked')){
-		console.log("yeet");
 		$('#check-for-public').css('visibility', 'visible');
 		$('#message-for-public').css('visibility','visible');
 	}
@@ -142,6 +132,7 @@ moveCheckNotification = function(){
 		$('#check-for-public').css('visibility', 'hidden');
 		$('#message-for-public').css('visibility','hidden');
 	}
+	updateNote(true);
 }
 
 insertTable = function(){
@@ -149,10 +140,6 @@ insertTable = function(){
 	var rows= parseInt($('#table-rows').val());
 	var columns = parseInt($('#table-columns').val());
 	var table= "<table class=\" table table-bordered\"  contenteditable>";
-
-	console.log(columns);
-
-
 	for(i= 0; i<rows; i++){
 
 		if(i==0){ 

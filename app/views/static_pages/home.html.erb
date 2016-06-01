@@ -6,7 +6,5 @@
 </div>
 
 <div class="container">
-	<div class="well">
-		<%= link_to "Search For Videos", controller: "content_items", action: "search" %>
-	</div>
+	<%= button_to "Search For Videos", {controller: "content_items", action: "search"},  {id: "search-button"} %>
 </div>

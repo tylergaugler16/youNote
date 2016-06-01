@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
-	# respond_to :html, :js
-
+	
 	def index
 		@public_notes = Note.where(user_id: current_user.id, public: true)
 		@private_notes= Note.where(user_id: current_user.id, public: false)
@@ -32,28 +31,22 @@ class NotesController < ApplicationController
 	def update
 		@note= Note.find(params[:id])
 		@note.update(note_params)
-
 	# if ok
 	    respond_to do |format|
-	      format.json {render json: {:my_status => "updated", :data => "my_data"}}
+	      format.json {render json: {"status" => 200, :data => {title: @note.title, content: @note.content} }}
 	    end
 	 # if something goes wrong: fail the Ajax call
 		rescue Exception => e
 		  puts "Exception #{e.message}"
 		  render :nothing => true, :status => 500
 		
-
 	end
 
 
 	def destroy
 		Note.find(params[:id]).destroy
-
 		redirect_to notes_path
-
 	end
-
-
 
 
 

@@ -6,6 +6,7 @@
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
 }
+
 $gray-medium-light: #eaeaea;
 $background-gray:#F8F8F8;
 $custom-blue: #2bb0ff;
@@ -165,10 +166,6 @@ input, textarea, select, .uneditable-input {
   @include box_sizing;
 }
 
-input {
-  // margin-bottom: 50px;
-  height: auto !important;
-}
 input.search-bar{
   background-color: $custom-blue;
 }
@@ -202,8 +199,6 @@ input.search-bar{
   width: auto;
   margin-left: 0;
 }
-
-
 
 
 

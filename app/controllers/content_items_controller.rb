@@ -5,10 +5,9 @@ class ContentItemsController < ApplicationController
 	#for: Can't verify CSRF token authenticity
 	skip_before_filter  :verify_authenticity_token
 
-
   def search
    # so that the iniatial get request does not execute an empty search
-    if params[:q] != nil || params[:page] != nil
+    if !params[:q].blank?  || !params[:page].blank? 
         params[:page] = params[:page] || 1
         @videos= []
         videos = Yt::Collections::Videos.new
@@ -27,7 +26,6 @@ class ContentItemsController < ApplicationController
 
   def show
   		@video = Yt::Video.new id: params[:content_item_id]
-
   end
 
 end
