@@ -12,7 +12,35 @@ $custom-red:#d75757;
 	h1{
 		margin-top: 50px;
 	}
+
+	#note-info{
+		padding:10px;
+		position:relative;
+		width:100%;
+		// margin-top: 50px;
+		#author{
+			color:$custom-blue;
+			font-weight:bold;
+			position:absolute;
+			display: inline-block;
+			left:0;
+			a{
+				color:$custom-blue;
+				&:hover{
+					text-decoration: none;
+				}
+			}
+		}
+		#views{
+			color:$custom-blue;
+			font-weight:bold;
+			position:absolute;
+			display: inline-block;
+			right:0;
+		}
+	}
 	.show-video-container{
+		clear:both;
 		iframe{
 			width:640;
 			height:360;

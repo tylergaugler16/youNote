@@ -6,7 +6,7 @@ module NotesHelper
 	end
 
 	def user_of_note(note)
-		User.find(note.user_id).name
+		name = User.find(note.user_id).name
 	end
 
 	def note_video_url(note)

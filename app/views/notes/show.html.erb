@@ -1,5 +1,15 @@
 
 <div class="note-container container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div id="note-info">
+				<span id="author"> Note Author: <%= link_to user_of_note(@note), user_path(@note.user_id) %> </span>
+				<span id="views"> Views:  <%= @note.views %> </span>
+			</div>
+		</div>
+	</div>
+
+	
 		 <h1 class="note-title-header"> <span <%= ((current_user) && @note.user_id == current_user.id)?  "contenteditable=true" : '' %> > <%= @note.title %> </span></h1>
 	<div class="row">
 		<div class="col-md-6">
@@ -44,9 +54,12 @@
 			<span><b>Warning: This Will Permanently Delete Your Note</b></span> <br>
 			<%= button_to 'Delete Note', @note, :method => :delete, :params =>{ id: @note.id}, :class => "btn btn-default btn-block ", :id=> 'delete-note-button' , :onclick => "return confirm('Are You Sure You Want to Delete Your Note?');" %>
 		</div>
+
 	</div>
+
 		
 <% end %>
+
 		
 	
 

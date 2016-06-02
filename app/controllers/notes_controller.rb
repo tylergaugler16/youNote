@@ -8,6 +8,7 @@ class NotesController < ApplicationController
 	def show
 		@note= Note.find(params[:id])
 		@note_video=  Yt::Video.new id: @note.content_item_id
+		@note.increment(:views, by = 1).save
 	end
 
 	def new
@@ -18,6 +19,7 @@ class NotesController < ApplicationController
 		@note= Note.new(note_params)
 
 		if @note.save
+			@note.increment(:views, by = 1).save
 			redirect_to @note
 		else
 			redirect_to "content_items/search?content_item_id=#{params[:content_item_id]}"
