@@ -1,4 +1,5 @@
-
+$custom-blue: #2bb0ff;
+$gray-medium-light: #eaeaea;
 
 .home-picture{
 	height:660px;
@@ -35,9 +36,54 @@
 }
 
 #search-button{
-	margin-top:50px;
-	background-color:#d75757;
-	height:70px;
-	color:white;
+	margin-top: 50px;
+	background-color: #d75757;
+	height: 70px;
+	color: white;
 	font-size: 1.8em;	
+	margin-bottom: 150px;
 }
+
+
+
+#my-notes{
+	.row:nth-child(even){
+		background-color: $gray-medium-light;
+	}
+
+	.home-note{
+	height:305px;
+	img{
+		bottom:0;
+		display: block;
+	    margin-left: auto;
+	    margin-right: auto;
+	}
+	img:hover{
+		opacity: 0.7;
+	}
+
+	h2{
+		color:black;
+		bottom:0;
+		margin-bottom:15px;
+		a{
+			color:black;
+			text-decoration: none; 
+		}
+	}
+}
+
+.home-note:nth-child(3n+2){
+	border-left:2px solid $custom-blue;
+	border-right:2px solid $custom-blue;
+}
+
+}
+
+
+#ajax-gif{
+	margin-top:25px;
+	margin-left: 47%;
+}
+

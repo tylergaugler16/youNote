@@ -8,3 +8,14 @@
 <div class="container">
 	<%= button_to "Search For Videos", {controller: "content_items", action: "search"},  {id: "search-button"} %>
 </div>
+
+<div id="my-notes">
+  <%= render 'home_notes', object: @home_notes %>
+</div>
+
+<div id="infinite-scrolling">
+  <%= will_paginate @home_notes %>
+</div>
+
+<div id="ajax-gif"></div>
+

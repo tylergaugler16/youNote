@@ -1,0 +1,16 @@
+
+
+<%	@home_notes.in_groups_of(3).each do |group| %>
+			<div class="row">
+				<% group.each do |note| %>
+						<% if note %>
+							<div class="col-md-4 home-note">
+							    <h2> <%= link_to note.title, note_path(note) %> </h2>
+							    <br>
+							 	<%= link_to image_tag(note_video_url(note), :size => "200x150"), note_path(note) %>
+							    <h2> By <%= link_to user_of_note(note), user_path(note.user_id) %> </h2>
+							</div>
+						<% end %>
+					<% end %>
+			</div>	
+		<% end %>

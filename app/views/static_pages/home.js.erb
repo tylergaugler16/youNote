@@ -1,0 +1,10 @@
+
+$('#my-notes').append("<%= j render 'home_notes', object: @home_notes %>");
+<% if @home_notes.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @home_notes %>');
+  $('.pagination').css('display','none');
+<% else %>
+  $(window).off('scroll');
+  $('#ajax-gif').css('display', 'none');
+  $('.pagination').remove();
+<% end %>

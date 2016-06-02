@@ -15,5 +15,6 @@
 //= require jquery.turbolinks
 //= require bootstrap.min.js
 //= custom-notes.js
+//= pagination.js.coffee
 //= require turbolinks
 //= require_tree .

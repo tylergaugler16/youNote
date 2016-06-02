@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-	
+
 	def index
 		@public_notes = Note.where(user_id: current_user.id, public: true)
 		@private_notes= Note.where(user_id: current_user.id, public: false)
