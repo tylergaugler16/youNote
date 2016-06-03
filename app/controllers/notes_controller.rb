@@ -19,7 +19,6 @@ class NotesController < ApplicationController
 		@note= Note.new(note_params)
 
 		if @note.save
-			@note.increment(:views, by = 1).save
 			redirect_to @note
 		else
 			redirect_to "content_items/search?content_item_id=#{params[:content_item_id]}"
