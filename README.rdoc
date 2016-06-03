@@ -11,26 +11,27 @@ YouNote is an application built with Ruby on Rails, that utlizes Bootsrap, JQuer
 
 *Cool* *Implentations:*
 
-	* Users can edit change font styles and add tables into thier notes via jQuery
+* Users can edit change font styles and add tables into thier notes via jQuery
 
-	* Automatic save of note every 60s via AJAX request. 
+* Automatic save of note every 60s via AJAX request. 
 
-	* Users can make notes public or private
+* Users can make notes public or private
 
-	* Infinite scroll on home page for all public notes using will_paginate gem and AJAX request.
+* Infinite scroll on home page for all public notes using will_paginate gem and AJAX request.
 
 == Installation
 
-#  git clone https://github.com/tylergaugler16/youNote.git
-#  cd youNote
+	git clone https://github.com/tylergaugler16/youNote.git
 
-#  bundle install
-#  bundle exec rake db:create
-#  bundle exec rake db:create
+	cd youNote
+
+	bundle install
+	bundle exec rake db:create
+	bundle exec rake db:create
 
 
 == Run With:
 
-	#  rails server
+	rails server
 
 	
