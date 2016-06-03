@@ -20,15 +20,18 @@ YouNote is an application built with Ruby on Rails, that utlizes Bootsrap, JQuer
 * Infinite scroll on home page for all public notes using will_paginate gem and AJAX request.
 
 == Installation
-	git clone https://github.com/tylergaugler16/youNote.git
+	<tt> git clone https://github.com/tylergaugler16/youNote.git </tt>
 	
-	cd youNote
-	bundle install
-	bundle exec rake db:create
-	bundle exec rake db:create
+	<tt> cd youNote</tt>
+
+	<tt>bundle install</tt>
+
+	<tt>bundle exec rake db:create</tt>
+	
+	<tt>bundle exec rake db:create</tt>
 
 
 == Run With:
-	rails server
+	<tt>rails server</tt>
 
 	
