@@ -1,15 +1,15 @@
-== YouNote
+# YouNote
 
 YouNote is a learning tool where you can can search for videos from youtube and take notes while watching them. Make them
 public so that other users can see what you're learning. 
 
-Visit YouNote here[https://younote.herokuapp.com]  
+Visit YouNote [here](https://younote.herokuapp.com)  
 
-== About 
+# About 
 
 YouNote is an application built with Ruby on Rails, that utlizes Bootsrap, JQuery and runs Postgres as the db in production. 
 
-*Cool* *Implentations:*
+**Cool** **Implentations:**
 
 * Users can edit change font styles and add tables into thier notes via jQuery
 
@@ -19,19 +19,22 @@ YouNote is an application built with Ruby on Rails, that utlizes Bootsrap, JQuer
 
 * Infinite scroll on home page for all public notes using will_paginate gem and AJAX request.
 
-== Installation
-	<tt> git clone https://github.com/tylergaugler16/youNote.git </tt>
-	
-	<tt> cd youNote</tt>
+# Installation
+			
+`
+	git clone https://github.com/tylergaugler16/youNote.git
+	cd youNote
 
-	<tt>bundle install</tt>
+`
 
-	<tt>bundle exec rake db:create</tt>
-	
-	<tt>bundle exec rake db:create</tt>
+`
+	bundle install
+	bundle exec rake db:create
+	bundle exec rake db:create
+`
 
 
-== Run With:
-	<tt>rails server</tt>
+# Run With:
+	`rails server`
 
 	
