@@ -22,10 +22,14 @@ YouNote is an application built with Ruby on Rails, that utlizes Bootsrap, JQuer
 # Installation
 			
 `git clone https://github.com/tylergaugler16/youNote.git`
+
 `cd youNote`
 
+
 `bundle install`
+
 `bundle exec rake db:create`
+
 `bundle exec rake db:create`
 
 # Run With:
