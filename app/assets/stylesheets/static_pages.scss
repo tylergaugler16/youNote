@@ -41,7 +41,24 @@ $gray-medium-light: #eaeaea;
 	height: 70px;
 	color: white;
 	font-size: 1.8em;	
-	margin-bottom: 150px;
+	margin-bottom: 60px;
+	border-radius: 5px;
+}
+
+#gray-line-break{
+	background-color:$gray-medium-light;
+	width:100%;
+	border-top: 2px solid $gray-medium-light;
+	border-bottom: 2px solid $gray-medium-light;
+	margin-bottom:10px;
+	padding-left:15px;
+	span{
+		letter-spacing: 1px;
+		font-size: 2em;
+		color: $custom-blue;
+		border-left:2px solid $custom-blue;
+		padding-left:6px;
+	}
 }
 
 
@@ -64,6 +81,7 @@ $gray-medium-light: #eaeaea;
 	}
 
 	h2{
+		height:1em;
 		color:black;
 		bottom:0;
 		margin-bottom:15px;

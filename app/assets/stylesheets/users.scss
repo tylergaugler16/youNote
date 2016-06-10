@@ -1,5 +1,5 @@
 $custom-blue: #2bb0ff;
-
+$gray-medium-light: #eaeaea;
 
 // *********************************** sign up 
 
@@ -35,24 +35,30 @@ form.new_user{
 		font-size: 3em;
 	}
 
-	.top_notes{
-		margin-top: 16%;
-
-		span{
-			font-weight: bold;
-		}
-		span.right{
-			float:right;
-		}
-		span.left{
-			float:left;
-		}
-		.panel-heading{
-			background-color: $custom-blue;
-			overflow: hidden;
-		}
+	.user-bio{
+		height:10em;
+		border:2px solid $gray-medium-light;
+		overflow: scroll;
 	}
   }
+.top_notes{
+	margin-top:5%;
+	span{
+		font-weight: bold;
+	}
+	span.right{
+		float:right;
+	}
+	span.left{
+		float:left;
+	}
+	.panel-heading{
+		background-color: $custom-blue;
+		overflow: hidden;
+	}
+}
+
+
 
 
   //************************************ index

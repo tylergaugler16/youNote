@@ -9,6 +9,11 @@
 	<%= button_to "Search For Videos", {controller: "content_items", action: "search"},  {id: "search-button"} %>
 </div>
 
+<div id="gray-line-break">
+	<span id="home-notes-title">Popular Notes</span>
+</div>
+
+
 <div id="my-notes">
   <%= render 'home_notes', object: @home_notes %>
 </div>

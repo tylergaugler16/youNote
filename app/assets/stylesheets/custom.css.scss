@@ -70,7 +70,6 @@ p {
 header{ 
  margin-bottom:150px;
   #logo {
-
     float: left;
     margin-right: 10px;
     font-size: 1.9em;
@@ -92,6 +91,7 @@ header{
   height:100px;
 
   .navbar-brand{
+    text-shadow: 2px 2px 2px #CCCCCC;
       font-size:2.2em;
   }
   #myNavbar li a{

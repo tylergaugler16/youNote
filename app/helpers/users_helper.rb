@@ -23,5 +23,9 @@ module UsersHelper
 	    response.code.to_i != 404 # from d=404 parameter
 	end
 
+	def is_logged_in?(user)
+		current_user.id == user.id
+	end
+
 
 end
