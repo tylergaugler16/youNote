@@ -11,17 +11,20 @@
   		</div>
   		<p><%= @user.email %></p>
   		<% if ( (current_user) && current_user.id == @user.id )%>
-		<%= link_to "View All My Notes", notes_path %>
+			<%= link_to "View All My Notes", notes_path %> <br> <br>
+			<div class="container">
+				<%= link_to ("Search For Videos <span class='glyphicon glyphicon-search'></span>").html_safe, {controller: "content_items", action: "search"}%>
+			</div>
 		<% else %>
-		<%= link_to "View Public Notes", controller: "users", action: "public_notes" ,params: {id: @user.id} %>
+			<%= link_to "View Public Notes", controller: "users", action: "public_notes" ,params: {id: @user.id} %>
 		<% end %>
 	</div>
 
-	<div class="col-md-6">
+	<div class="col-md-8">
 			<h1> <%= @user.name %> </h1>
 			
 			<div class="container-fluid user-bio" <%=((current_user) && current_user.id == @user.id)? 'contenteditable' : '' %>>
-				
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac nulla a nulla aliquet sodales. Proin tincidunt nisl nec ornare semper. Fusce tincidunt interdum lectus nec iaculis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis purus pretium, commodo lectus ac, posuere magna.
 			</div>
 			
 	</div>
@@ -31,7 +34,7 @@
 
 <div class="row">
 	<div class="col-md-3"></div>
-	<div class="col-md-6">
+	<div class="col-md-8">
 		<div class="top_notes container-fluid">
 				  <div class="panel panel-default">
 				    <div class="panel-heading">
@@ -45,6 +48,16 @@
 			</div>
 	</div>	
 </div>
+
+<% if ( (current_user) && current_user.id == @user.id )%>
+<div class="row">
+	<div class="col-md-11"></div>
+	<div class="col-md-1">
+	
+		
+	</div>
+</div>
+<% end %> 
 
 
 </div>

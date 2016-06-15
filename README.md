@@ -1,19 +1,19 @@
 # YouNote
 
-YouNote is a learning tool where you can can search for videos from youtube and take notes while watching them. Make them
+YouNote is a learning tool where you can search for videos from youtube and take notes while watching them. Make your notes
 public so that other users can see what you're learning. 
 
 Visit YouNote [here](https://younote.herokuapp.com)  
 
 # About 
 
-YouNote is an application built with Ruby on Rails, that utlizes Bootsrap, JQuery and runs Postgres as the db in production. 
+YouNote is an application built with Ruby on Rails, that utlizes Bootsrap, JQuery and runs Postgres as the db in production.
 
 **Cool** **Implentations:**
 
 * Users can edit change font styles and add tables into thier notes via jQuery
 
-* Automatic save of note every 60s via AJAX request. 
+* Automatic save of note every 60s via AJAX patch request. 
 
 * Users can make notes public or private
 
