@@ -31,12 +31,25 @@ def public_notes
 	@public_notes= @user.notes.where(public: true)
 end
 
+def edit 
+  @user= User.find(params[:id])
+end
+
+def update
+	@user= User.find(params[:id])
+	if @user.update_attribute(:bio, params[:user][:bio])
+	  flash[:success] = "Bio updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
+end
 
 
 private
 
  def user_params
-	  params.require(:user).permit(:name, :email, :password, :password_confirmation)
+	  params.require(:user).permit(:name, :email, :password, :password_confirmation, :bio)
  end
 
 end

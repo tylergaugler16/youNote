@@ -1,5 +1,6 @@
 $custom-blue: #2bb0ff;
 $gray-medium-light: #eaeaea;
+$background-gray:#F8F8F8;
 
 // *********************************** sign up 
 
@@ -39,6 +40,7 @@ form.new_user{
 		height:10em;
 		border:2px solid $gray-medium-light;
 		overflow: scroll;
+		// background-color: $gray-medium-light;
 	}
   }
 .top_notes{
@@ -68,6 +70,15 @@ form.new_user{
 
 
 	}
+
+  // ************************************ edit
+
+  .left-header{
+  	text-align:left;
+  	width: 100%;
+  	background-color: $gray-medium-light;
+  	padding: 10px;
+  }
 
 
 

@@ -35,9 +35,11 @@
 
 <% if current_user && @note.user_id == current_user.id  %>
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12" id="note-settings-block">
 	  	<button class="btn btn-default btn-sm" id='hide-note-settings'><span class="glyphicon glyphicon-warning-sign"></span>
+	  	<span id="note-settings-label"> Settings </span>
 	   </button>
+	   
 	  </div>
 	</div>
 
