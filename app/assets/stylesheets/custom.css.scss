@@ -98,8 +98,9 @@ header{
       border-left: 2px solid $gray-medium-light;
       font-size: 1.2em;
   }
-  .dropdown-menu li a{
-    font-size: 1em;
+  .dropdown-menu{
+    font-size: 0.9em;
+    width:60%;
   }
 }
 
