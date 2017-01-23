@@ -1,6 +1,7 @@
 
 $('#my-notes').append("<%= j render 'home_notes', object: @home_notes %>");
 <% if @home_notes.next_page %>
+	console.log("there is a next page");
   $('.pagination').replaceWith('<%= j will_paginate @home_notes %>');
   $('.pagination').css('display','none');
 <% else %>

@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	moveDescription();
 	$pathname = window.location.pathname.toString();
@@ -7,8 +6,6 @@ $(document).ready(function(){
 		watchChanges();
 	}
 	else {console.log("not the right url");}
-
-
 });
 
 watchChanges = function(){
@@ -28,7 +25,6 @@ watchChanges = function(){
 	$('#note-content').on('keydown', function(e){
 	
 	});
-
 
 	$('#font-size').change(function(){
 		changeFontSize();
@@ -57,7 +53,6 @@ watchChanges = function(){
 	$('#public-checkbox').on('change', function(){
 		moveCheckNotification();
 	});
-		
 }
 
 updateNote = function(should_notify){
@@ -78,11 +73,8 @@ updateNote = function(should_notify){
 			failure: function(){
 				console.log('didnt work');
 			}
-
 		});
-
 }
-
 alertUser= function(){
 	if(! $('.alert').length ){
 		$('.navbar').after("<div class='alert alert-success' >"+
@@ -90,9 +82,7 @@ alertUser= function(){
 					  					"<strong>Updated Note!</strong>" + 
 										"</div>");
 	}
-	
 }
-
 moveDescription = function(){
 	console.log('hiding description');
 	if( $('.description').css('display') != 'none'){
@@ -104,8 +94,7 @@ moveDescription = function(){
 		$('.description').css('display','block');
 		$('#description-message').css('display','inline');
 		$('#hide-description').find('span').removeClass('glyphicon-plus').addClass('glyphicon-minus') ; 
-	}
-	
+	}	
 }
 
 changeFontSize= function(){
@@ -119,7 +108,6 @@ moveSettings = function(){
 	}
 	else {
 		$('.note-settings').css('display','block');
-		
 	}
 }
 
